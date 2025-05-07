@@ -3,10 +3,8 @@ from employee_events.query_base import QueryBase
 
 # Import dependencies needed for sql execution
 # from the `sql_execution` module
-#### YOUR CODE HERE
 
-# Define a subclass of QueryBase
-# called Employee
+
 class Employee(QueryBase):
 
     # Set the class attribute `name`

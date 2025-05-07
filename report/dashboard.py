@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 
 # Import QueryBase, Employee, Team from employee_events
-from employee_events import Employee, QueryBase, Team
-from fasthtml.common import *
+from employee_events import Employee, Team
+from fasthtml.common import H1, Div, FastHTML, serve
 
 # import the load_model function from the utils.py file
 from utils import load_model
@@ -17,7 +17,7 @@ from base_components import (
     Radio,
     MatplotlibViz,
     DataTable
-    )
+)
 
 from combined_components import FormGroup, CombinedComponent
 
@@ -252,8 +252,8 @@ def index():
 # Set the route's path to receive a request
 # for an employee ID so `/employee/2`
 # will return the page for the employee with
-# an ID of `2`. 
-# parameterize the employee ID 
+# an ID of `2`.
+# parameterize the employee ID
 # to a string datatype
 @app.get("/employee/{id:str}")
 def employee(id: str):
@@ -268,8 +268,8 @@ def employee(id: str):
 # Set the route's path to receive a request
 # for a team ID so `/team/2`
 # will return the page for the team with
-# an ID of `2`. 
-# parameterize the team ID 
+# an ID of `2`.
+# parameterize the team ID
 # to a string datatype
 @app.get("/team/{id:str}")
 def team(id: str):
@@ -301,7 +301,6 @@ async def update_data(r):
         return RedirectResponse(f"/employee/{id}", status_code=303)
     elif profile_type == 'Team':
         return RedirectResponse(f"/team/{id}", status_code=303)
-    
 
 
 serve()

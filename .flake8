@@ -1,0 +1,26 @@
+[flake8]
+# Exclude standard patterns
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    env,
+    build,
+    dist,
+    *.egg-info
+
+# Options for code style
+max-line-length = 100
+max-complexity = 10
+select = E,F,W,C90
+
+# Only include files that were changed as part of the exercise
+filename =
+    ./python-package/employee_events/employee.py,
+    ./python-package/employee_events/query_base.py,
+    ./python-package/employee_events/sql_execution.py,
+    ./python-package/employee_events/team.py,
+    ./report/dashboard.py,
+    ./report/utils.py,
+	./tests/test_employee_events.py
